@@ -1,0 +1,482 @@
+html, body {
+    padding:0;
+    margin:0;
+    width:100%;
+    height:100%;
+}
+
+body {
+    font-family:pixelmazregularregular,sans-serif;
+}
+
+#game {
+    width:100%;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+}
+#game #pontodereferencia {
+    position:absolute;
+    width:1px;
+    height:1px;
+    left:0;
+    top:0;
+    display:none;
+}
+
+#skier {
+    position:absolute;
+    width:34px;
+    height:34px;
+    left:-5px;
+    bottom:0;
+}
+
+#skier.pos-4 {
+    background:url(../images/homem/homem_esquerda2.png) -19px -19px;
+}
+#skier.pos-3 {
+    background:url(../images/homem/homem_direita2.png) -19px -19px;
+}
+#skier.pos-2 {
+    background:url(../images/homem/homem_esquerda3.png) -19px -19px;
+}
+#skier.pos-1 {
+    background:url(../images/homem/homem_esquerda1.png) -19px -19px;
+}
+#skier.pos0 {
+    background:url(../images/homem/homem_reto.png) -19px -19px;
+}
+#skier.pos1 {
+    background:url(../images/homem/homem_direita1.png) -19px -19px;
+}
+#skier.pos2 {
+    background:url(../images/homem/homem_direita3.png) -19px -19px;
+}
+#skier.pos3 {
+    background:url(../images/homem/homem_caido.png) -19px -19px;
+}
+#skier.pos4 {
+    background:url(../images/homem/homem_sentado.png) -19px -19px;
+}
+#skier.pos5 {
+    background:url(../images/homem/homem_pulando.png) -19px -19px;
+    z-index:100;
+}
+
+.gameobject {
+    position:absolute;
+}
+.gameobject.type-tree {
+    background:url(../images/objetos/arvore_cheia.png);
+}
+.gameobject.type-tree2 {
+    background:url(../images/objetos/arvore_pelada.png);
+}
+.gameobject.type-tree3 {
+    background:url(../images/objetos/arvore_maior.png);
+}
+.gameobject.type-rock {
+    background:url(../images/objetos/pedra2.png);
+}
+.gameobject.type-rock2 {
+    background:url(../images/objetos/pedra1.png);
+}
+.gameobject.type-snow {
+    background:url(../images/objetos/ondinha.png);
+}
+.gameobject.type-snow2 {
+    background:url(../images/objetos/ondonas.png);
+}
+.gameobject.type-ramp {
+    background:url(../images/objetos/rampa_GLBT.png);
+}
+
+.gameobject.type-copyright {
+    background:url(../images/objetos/copyright.png);
+}
+.gameobject.type-placas1 {
+    background:url(../images/objetos/placas1.png);
+}
+.gameobject.type-placas2 {
+    background:url(../images/objetos/placas2.png);
+}
+
+.gelofinal {
+    position:absolute;
+    width:2500px;
+    height:229px;
+    margin:229px 0 0 -1250px;
+    background:url(../images/penhasco.png) repeat-x;
+}
+.gelofinal .agua {
+    position:absolute;
+    width:2500px;
+    height:2000px;
+    top:100%;
+    left:0;
+    background:#218cff;
+}
+.gelofinal .agua .monstroafogando {
+    position:absolute;
+    width:53px;
+    height:40px;
+    top:30px;
+    left:50%;
+    margin:0 0 0 140px;
+    background:url(../images/monstro-afogando.gif);
+}
+.aguinha {
+    position:absolute;
+    width:124px;
+    height:57px;
+    margin:-15px 0 0 0;
+    background:url(../images/mergulho.gif);
+}
+
+.telafinalpretaporqueojesuspediu {
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background:#000;
+    z-index:100;
+}
+
+.nevinhadojesus {
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:8;
+    overflow:hidden;
+}
+.nevinhadojesus .fundo {
+    position:absolute;
+    height:1px;
+    width:100%;
+    left:0;
+    bottom:0;
+}
+
+.telafinal {
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    /*overflow:hidden;*/
+    background:#218cff;
+}
+.telafinal .placa {
+    width:681px;
+    height:232px;
+    background:url(../images/placa.png) no-repeat;
+    position:absolute;
+    /*top:0;*/
+    top:-240px;
+    left:50%;
+    margin:0 0 0 -340px;
+    z-index:10;
+}
+.telafinal .ilha {
+    width:222px;
+    height:203px;
+    background:url(../images/ilha.png) no-repeat;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-48px 0 0 -111px;
+    z-index:8;
+}
+.telafinal .monster {
+    width:122px;
+    height:160px;
+    background:url(../images/monster.gif) no-repeat;
+    position:absolute;
+    bottom:50%;
+    left:50%;
+    z-index:9;
+}
+.telafinal .faixainferior {
+    /*display:none;*/
+    position:fixed;
+    width:100%;
+    height:132px;
+    text-align:center;
+    background-color:#000;
+    /*bottom:0;*/
+    bottom:-132px;
+    left:0;
+    z-index:9;
+}
+.telafinal .faixainferior .texto {
+    width:786px;
+    margin:auto;
+    font-size:40pt;
+}
+.telafinal .faixainferior .texto p {
+    margin:30px 0 0 0;
+    letter-spacing:2px;
+}
+.telafinal .faixainferior .texto p a {
+    text-transform:uppercase;
+    color:#00f934;
+    text-decoration:none;
+}
+@-moz-document url-prefix() {
+    .telafinal .faixainferior .texto p a {
+        line-height: 19px;
+        height: 24px;
+    }
+}
+.telafinal .faixainferior .texto p a:hover {
+    /*text-decoration:underline;*/
+    color:#fff;
+}
+.telafinal .faixainferior .texto p.spread {
+    color:#2441fb;
+    margin:9px 0 0 0;
+    font-size:28pt;
+}
+.telafinal .faixainferior .texto p.spread a {
+    display:inline-block;
+    color:#2441fb;
+    text-transform:none;
+    padding:0 0 0 27px;
+    background:url(../images/icons.png) no-repeat 0 5px;
+    margin:0 0 0 10px;
+}
+.telafinal .faixainferior .texto p.spread a:hover {
+    color:#fff;
+    background-position:0 -65px;
+}
+.telafinal .faixainferior .texto p.spread a.twitter {
+    background-position:0 -34px;
+}
+.telafinal .faixainferior .texto p.spread a.twitter:hover {
+    background-position:0 -104px;
+}
+
+.telafinal .faixainferior .texto p.spread a.mudeomundo {
+    width:191px;
+    height:27px;
+    position:relative;
+    background:none;
+    text-indent:-99999999px;
+}
+.telafinal .faixainferior .texto p.spread a.mudeomundo b {
+    position:absolute;
+    display:block;
+    text-indent:-9999px;
+    overflow:hidden;
+    width:191px;
+    height:39px;
+    background:url(../images/icons.png) no-repeat 0 5px;
+    background-position:0 -150px;
+    left:0;
+    top:-4px;
+}
+.telafinal .faixainferior .texto p.spread a.mudeomundo b:hover {
+    background-position:0 -211px;
+}
+
+.telafinal .dicas {
+    display:none;
+    position:absolute;
+    width:100%;
+    padding:75px 0 167px 0;
+    text-align:center;
+    background-color:#fff;
+    top: 100%;
+    margin: -132px 0 0 0;
+    z-index:12;
+}
+.telafinal .dicas > .texto {
+    width:786px;
+    text-align:left;
+    margin:auto;
+}
+.telafinal .dicas > .texto > h2 {
+    color:#218cfe;
+    font-weight:normal;
+    text-transform:uppercase;
+    font-size:40pt;
+    margin:0 0 20px 0;
+    letter-spacing:2px;
+}
+.telafinal .dicas > .texto > p {
+    color:#777;
+    font-family:pixel_unicoderegular,sans-serif;
+    font-size:17pt;
+    margin:0 0 40px 0;
+    letter-spacing:2px;
+    line-height:25px;
+}
+/* .telafinal .dicas .faixainferior {
+    position:fixed;
+} */
+
+.errormobile {
+    color:#218cfe;
+    font-size:100pt;
+    letter-spacing:2px;
+    margin:0;
+    padding:20px 0 0 40px;
+}
+
+.board {
+    width:100%;
+    min-width:987px;
+    position:relative;
+    background:url(../images/board/board2.jpg) no-repeat center 568px #222421;
+}
+
+.board .dobra1 {
+    height:568px;
+    padding:0 0 2414px 0;
+    width:987px;
+    left:50%;
+    margin:0 0 0 -494px;
+    text-align:center;
+    background:url(../images/board/board1.png) no-repeat center 97px transparent;
+}
+
+.board .dobra2 {
+    height:4255px;
+    padding:0;
+    width:987px;
+    left:50%;
+    margin:0 0 0 -494px;
+    text-align:center;
+    background:url(../images/board/board3.gif) no-repeat center 142px transparent;
+}
+.board .dobra2 a {
+    display:block;
+    width:652px;
+    height:54px;
+    position:absolute;
+    left:50%;
+    padding:0;
+    margin:0 0 0 -345px;
+    bottom:101px;
+    text-indent:-99999px;
+}
+
+.boardes {
+    width:100%;
+    min-width:987px;
+    position:relative;
+    background:url(../images/board/board2.jpg) no-repeat center 568px #222421;
+}
+
+.boardes .dobra1 {
+    height:568px;
+    padding:0 0 2414px 0;
+    width:987px;
+    left:50%;
+    margin:0 0 0 -494px;
+    text-align:center;
+    background:url(../images/board/boardes1.png) no-repeat center 97px transparent;
+}
+
+.boardes .dobra2 {
+    height:4255px;
+    padding:0;
+    width:987px;
+    left:50%;
+    margin:0 0 0 -494px;
+    text-align:center;
+    background:url(../images/board/boardes3.gif) no-repeat center 142px transparent;
+}
+.boardes .dobra2 a {
+    display:block;
+    width:652px;
+    height:54px;
+    position:absolute;
+    left:50%;
+    padding:0;
+    margin:0 0 0 -345px;
+    bottom:101px;
+    text-indent:-99999px;
+}
+
+.mobile-controls-wrapper {
+    display:none;
+}
+
+@media (max-width:960px) {
+    .telafinal .placa {
+        width:340px;
+        height:116px;
+        background-size:contain;
+        position:absolute;
+        /*top:0;*/
+        top:-240px;
+        left:50%;
+        margin:0 0 0 -170px;
+        z-index:10;
+    }
+    .telafinal .dicas {
+        text-align:center;
+    }
+    .telafinal .dicas > .texto {
+        text-align:left;
+        width:80%;
+        margin:auto;
+    }
+    .telafinal .faixainferior .texto {
+        width:100%;
+    }
+    .telafinal .faixainferior {
+        height:173px;
+        bottom:-173px;
+    }
+    .telafinal .ilha {
+        top:40%;
+    }
+
+    .mobile-controls-wrapper {
+        position:fixed;
+        z-index:20;
+        bottom:10%;
+        left:0;
+        width:100%;
+    }   
+    #mobile-controls {
+        display:flex;
+        justify-content: space-evenly;
+        width:100%;
+    }
+    #mobile-controls a {
+        display:block;
+        width:80px;
+        height:80px;
+        border:1px solid #ababab;
+        font-size:55pt;
+        color:#6e6e6e;
+        text-decoration: none;
+        background-color:#ffffffaa;
+        text-align:center;
+        line-height:85px;
+        border-radius:5px;
+    }
+    #mobile-controls a:nth-child(2) {
+        font-size:45pt;
+        line-height:90px;
+        padding-left:6px;
+        width:74px;
+    }
+    #mobile-controls a:nth-child(3) {
+        padding-left:12px;
+        width:68px;
+    }
+    .gelofinal .agua .monstroafogando {
+        margin-left:90px;
+    }
+}

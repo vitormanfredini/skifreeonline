@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'pixelmazregularregular';
+    src: url('pixel-maz-webfont.eot');
+    src: url('pixel-maz-webfont.eot?#iefix') format('embedded-opentype'),
+         url('pixel-maz-webfont.woff') format('woff'),
+         url('pixel-maz-webfont.ttf') format('truetype'),
+         url('pixel-maz-webfont.svg#pixelmazregularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'pixel_unicoderegular';
+    src: url('pixel-unicode-webfont.eot');
+    src: url('pixel-unicode-webfont.eot?#iefix') format('embedded-opentype'),
+         url('pixel-unicode-webfont.woff') format('woff'),
+         url('pixel-unicode-webfont.ttf') format('truetype'),
+         url('pixel-unicode-webfont.svg#pixel_unicoderegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
